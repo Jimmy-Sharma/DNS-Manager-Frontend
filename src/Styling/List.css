@@ -1,0 +1,83 @@
+.ListContainer {
+    background-color: black;
+    color: white;
+}
+
+.NavbarContainer>input {
+    padding: 10px;
+    font-size: 24px;
+    border-radius: 12px;
+    margin-top: 15px;
+}
+.addBTN{
+    padding: 5px 25px;
+    font-size: 20px;
+    margin: 15px 0px;
+    cursor: pointer;
+    background-color: rgb(247, 128, 128);
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.addBTN>img {
+    width: 50px;
+    height: 50px;
+}
+
+
+.userContainer {
+    border: 5px solid red;
+    margin: auto;
+    width: 20%;
+    font-size: 24px;
+    margin-top: 10px;
+    background-color: grey;
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.BtnContainer {
+    display: flex;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+.editBTN {
+    cursor: pointer;
+}
+
+.editBTN>img {
+    width: 50px;
+    height: 50px;
+}
+
+.deleteBTN {
+    cursor: pointer;
+}
+.deleteBTN button{
+    background-color: transparent;
+    cursor: pointer;
+    border: 0px solid #808080;
+}
+
+.deleteBTN img {
+    width: 50px;
+    height: 50px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .userContainer {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .userContainer {
+        width: 80%;
+    }
+}
