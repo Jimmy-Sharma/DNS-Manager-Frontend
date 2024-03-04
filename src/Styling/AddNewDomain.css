@@ -1,4 +1,4 @@
-.AddNewContactContainer {
+.AddNewDomainContainer {
     background-color: black;
     height: 100vh;
     color: white;
@@ -7,7 +7,7 @@
     font-size: 24px;
 }
 
-.AddNewContactMainContainer {
+.AddNewDomainMainContainer {
     border: 3px solid red;
     width: 35%;
     margin: auto;
@@ -66,16 +66,16 @@
 
 
 @media screen and (max-width: 1025px) {
-    .AddNewContactMainContainer {
+    .AddNewDomainMainContainer {
         width: 75%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .AddNewContactMainContainer {
+    .AddNewDomainMainContainer {
         width: 85%;
     }
-    .AddNewContactContainer{
+    .AddNewDomainContainer{
         height: 200vh;
     }
 }

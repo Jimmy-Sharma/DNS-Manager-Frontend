@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import DNSManagerDashboard from './Components/DNSManagerDashboard';
+import AllRoutes from './Components/AllRoutes';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <div className="App">
-      <DNSManagerDashboard />
+          <AllRoutes />
+          <Toaster/>
     </div>
   );
 }

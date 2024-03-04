@@ -1,29 +1,29 @@
 import * as actionTypes from "./actionType";
 
 const initialState = {
-    contacts: [],
-    selectedContact: null,
+    domains: [],
+    selectedDomain: null,
 };
 
-export const contactReducer = (state = initialState, action) => {
+export const domainReducer = (state = initialState, action) => {
     switch (action.type) {
-        case actionTypes.GET_CONTACTS:
-            return { ...state, contacts: action.payload };
-        case actionTypes.GET_SINGLE_CONTACT:
-            return { ...state, selectedContact: action.payload };
-        case actionTypes.ADD_CONTACT:
-            return { ...state, contacts: [...state.contacts, action.payload] };
-        case actionTypes.UPDATE_CONTACT:
+        case actionTypes.GET_DOMAINS:
+            return { ...state, domains: action.payload };
+        case actionTypes.GET_SINGLE_DOMAIN:
+            return { ...state, selectedDomain: action.payload };
+        case actionTypes.ADD_DOMAIN:
+            return { ...state, domains: [...state.domains, action.payload] };
+        case actionTypes.UPDATE_DOMAIN:
             return {
                 ...state,
-                contacts: state.contacts.map((el) =>
+                domains: state.domains.map((el) =>
                     el._id === action.payload._id ? action.payload : el
                 ),
             };
-        case actionTypes.DELETE_CONTACT:
+        case actionTypes.DELETE_DOMAIN:
             return {
                 ...state,
-                contacts: state.contacts.filter((el) => el._id !== action.payload),
+                domains: state.domains.filter((el) => el._id !== action.payload),
             };
 
         default:

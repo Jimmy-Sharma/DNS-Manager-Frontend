@@ -1,66 +1,66 @@
 import axios from "axios";
 import * as actionTypes from "./actionType";
 
-export const getContacts = (contacts) => ({
-    type: actionTypes.GET_CONTACTS,
-    payload: contacts,
+export const getDomains = (domain) => ({
+    type: actionTypes.GET_DOMAINS,
+    payload: domain,
 });
 
-export const addContactSuccess = (contact) => ({
-    type: actionTypes.ADD_CONTACT,
-    payload: contact,
+export const addDomainSuccess = (domain) => ({
+    type: actionTypes.ADD_DOMAIN,
+    payload: domain,
 });
 
-export const updateContactSuccess = (contact) => ({
-    type: actionTypes.UPDATE_CONTACT,
-    payload: contact,
+export const updateDomainSuccess = (domain) => ({
+    type: actionTypes.UPDATE_DOMAIN,
+    payload: domain,
 });
-export const getContactByIdSuccess = (contact) => ({
-    type: actionTypes.GET_SINGLE_CONTACT,
-    payload: contact,
-});
-
-export const deleteContactSuccess = (contactId) => ({
-    type: actionTypes.DELETE_CONTACT,
-    payload: contactId,
+export const getDomainByIdSuccess = (domain) => ({
+    type: actionTypes.GET_SINGLE_DOMAIN,
+    payload: domain,
 });
 
-export const getAllContacts = () => async (dispatch) => {
+export const deleteDomainSuccess = (domainId) => ({
+    type: actionTypes.DELETE_DOMAIN,
+    payload: domainId,
+});
+
+export const getAllDomains = () => async (dispatch) => {
     try {
-        const response = await axios.get("https://phonebook-spbu.onrender.com/api/contacts");
+        const response = await axios.get("https://dns-manager-backend.onrender.com/api/domains");
         console.log(response.data);
-        dispatch(getContacts(response.data));
+        dispatch(getDomains(response.data));
     } catch (error) {
         console.error(error);
     }
 };
 
-export const getContactById = (id) => async (dispatch) => {
+export const getDomainById = (id) => async (dispatch) => {
     try {
-        const response = await axios.get(`https://phonebook-spbu.onrender.com/api/contacts/${id}`);
-        dispatch(getContactByIdSuccess(response.data));
+        const response = await axios.get(`https://dns-manager-backend.onrender.com/api/domains/${id}`);
+        dispatch(getDomainByIdSuccess(response.data));
         console.log(response.data);
     } catch (error) {
         console.error(error);
     }
 };
 
-export const addContact = (contact) => {
+export const addDomain = (domain) => {
     return async (dispatch) => {
         try {
-            const response = await axios.post("https://phonebook-spbu.onrender.com/api/contact", contact);
-            dispatch(addContactSuccess(response.data.contact));
+            const response = await axios.post("https://dns-manager-backend.onrender.com/api/domain", domain);
+            dispatch(addDomainSuccess(response.data.domain));
         } catch (error) {
             console.error(error);
         }
     };
 };
 
-export const updateContact = (id, contact) => {
+export const updateDomain = (id, domain) => {
     return async (dispatch) => {
         try {
-            const response = await axios.patch(`https://phonebook-spbu.onrender.com/api/contacts/${id}`,contact);
-            dispatch(updateContactSuccess(response.data.contact));
+            const response = await axios.patch(`https://dns-manager-backend.onrender.com/api/domains/${id}`,domain);
+            dispatch(updateDomainSuccess(response.data.domain));
         } catch (error) {
             console.error(error);
         }
@@ -68,11 +68,11 @@ export const updateContact = (id, contact) => {
 };
 
 
-export const deleteContact = (id) => {
+export const deleteDomain = (id) => {
     return async (dispatch) => {
         try {
-            await axios.delete(`https://phonebook-spbu.onrender.com/api/contacts/${id}`);
-            dispatch(deleteContactSuccess(id));
+            await axios.delete(`https://dns-manager-backend.onrender.com/api/domains/${id}`);
+            dispatch(deleteDomainSuccess(id));
         } catch (error) {
             console.error(error);
         }

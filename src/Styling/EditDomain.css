@@ -75,7 +75,7 @@
 
 
 
-.AddNewContactContainerE {
+.AddNewDomainContainerE {
     background-color: black;
     height: 100vh;
     color: white;
@@ -84,7 +84,7 @@
     font-size: 24px;
 }
 
-.AddNewContactMainContainerE {
+.AddNewDomainMainContainerE {
     border: 3px solid red;
     width: 35%;
     margin: auto;
@@ -144,16 +144,16 @@
 
 
 @media screen and (max-width: 1025px) {
-    .AddNewContactMainContainerE {
+    .AddNewDomainMainContainerE {
         width: 75%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .AddNewContactMainContainerE {
+    .AddNewDomainMainContainerE {
         width: 85%;
     }
-    .AddNewContactContainerE{
+    .AddNewDomainContainerE{
         height: 200vh;
     }
 }

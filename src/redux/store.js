@@ -1,9 +1,9 @@
 import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
-import thunk from "redux-thunk";
-import { contactReducer } from "./reducer";
+import { thunk } from "redux-thunk";
+import { domainReducer } from "./reducer";
 
 const rootReducer = combineReducers({
-  contactReducer,
+  domainReducer,
 });
 
 export const store = legacy_createStore(rootReducer, applyMiddleware(thunk));

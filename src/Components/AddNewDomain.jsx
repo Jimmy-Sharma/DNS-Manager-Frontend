@@ -1,30 +1,30 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { addContact } from "../redux/action";
-import '../Styling/AddNewContact.css'
+import { addDomain } from "../redux/action";
+import '../Styling/AddNewDomain.css'
 import toast from "react-hot-toast";
 
-function AddNewContact() {
+function AddNewDomain() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const [newName, setNewName] = useState('');
-    const [newNumber, setNewNumber] = useState();
+    const [newDomainName, setNewDomainName] = useState();
 
 
     const handleNameChange = (e) => {
         setNewName(e.target.value);
     };
-    const handleContactChange = (e) => {
-        setNewNumber(e.target.value);
+    const handleDomainChange = (e) => {
+        setNewDomainName(e.target.value);
     };
 
-    const handleAddContact = () => {
-        console.log(newName, newNumber)
-        let newContact = { name: newName, number: newNumber }
-        dispatch(addContact(newContact));
-        toast.success("New Contact to DB Successfully");
+    const handleAddDomain = () => {
+        console.log(newName, newDomainName)
+        let newDomain = { name: newName, domainName: newDomainName }
+        dispatch(addDomain(newDomain));
+        toast.success("New Domain to DB Successfully");
         setTimeout(() => {
             navigate(`/`);
         }, 2000);
@@ -33,10 +33,10 @@ function AddNewContact() {
 
 
     return (
-        <div className="AddNewContactContainer">
-            <div className="AddNewContactMainContainer">
+        <div className="AddNewDomainContainer">
+            <div className="AddNewDomainMainContainer">
                 <div className="heading">
-                    <h2>Add Contact</h2>
+                    <h2>Add Domain</h2>
                     <Link to={`/`}>
                         <button id="cancelBTNDiv">
                             <img id="cancelBTN" src="cancel.png" alt="cancelBTN" />
@@ -52,15 +52,15 @@ function AddNewContact() {
                     />
                 </div>
                 <div className="inputbox">
-                    <label>Contact Number:</label>
+                    <label>Domain:</label>
                     <input
-                        type="number"
-                        value={newNumber}
-                        onChange={handleContactChange}
+                        type="text"
+                        value={newDomainName}
+                        onChange={handleDomainChange}
                     />
                 </div>
                 <div className="addBTNContainer">
-                    <button onClick={handleAddContact} className="addBTN">Add Contacts
+                    <button onClick={handleAddDomain} className="addBTN">Add Domains
                         <img src="addBTN.png" alt="" />
                     </button>
                 </div>
@@ -69,4 +69,4 @@ function AddNewContact() {
     );
 }
 
-export default AddNewContact;
+export default AddNewDomain;
